@@ -35,7 +35,18 @@ public class UserService {
 		userRepository.deleteById(id);
 	}
 	
+	public User updateUser(User newUser) {
+		Optional <User> oldUser = userRepository.findById(newUser.getId());
+		updateUserData(oldUser.get(), newUser);
+		return userRepository.save(oldUser.get());
+	}
+	
 	public User fromDTO(UserDTO userDto) {
 		return new User(userDto.getId(), userDto.getName(), userDto.getEmail());
+	}
+	
+	public void updateUserData(User oldUser, User newUser) {
+		oldUser.setName(newUser.getName());
+		oldUser.setEmail(newUser.getEmail());
 	}
 }
