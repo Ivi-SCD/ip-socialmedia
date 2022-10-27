@@ -48,4 +48,4 @@ git clone https://github.com/Ivi-SCD/project-apirestful-mongodb/
 * Open the `apirestful-mongodb` in your IDE as a Maven project and execute it as SpringBoot application.
 
 To visualize database, open your MongoDB Compass and acess.
-To made the CRUD and Selects you can use the Postman.
+To make the CRUD you can use the Postman.
