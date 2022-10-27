@@ -17,6 +17,10 @@ public class PostService {
 	@Autowired
 	PostRepository postRepository;
 	
+	public List <Post> findAll() {
+		return postRepository.findAll();
+	}
+	
 	public Post findById(String id) {
 		Optional <Post> post = postRepository.findById(id);
 		return post.orElseThrow(() -> new ObjectNotFoundException("Object not founded: " + id));
